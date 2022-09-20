@@ -1,9 +1,6 @@
 package com.example.week4;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MathAPI {
@@ -28,7 +25,7 @@ public class MathAPI {
         return n1%n2;
     }
     @RequestMapping(value = "/max", method = RequestMethod.POST)
-    public double myMax(@PathVariable("n1") double n1, @PathVariable("n2") double n2){
+    public double myMax(@RequestParam("n1") double n1, @RequestParam("n2") double n2){
         return (n1<n2) ? n2 : n1;
     }
 
